@@ -235,6 +235,44 @@ section {
   text-decoration: underline !important;
 }
 
+
+.container_chart{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.container_chart canvas{
+  width: 500px;
+  height: 500px;
+}
+
+.chart {
+  flex-basis: 100%;
+  max-width: 400px;
+  padding: 0.5rem; /* Örneğin, 0.5rem olarak değiştirin */
+  border: 1px solid #f49131;
+  border-radius: 1rem;
+
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 875px) {
+.container_chart {
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.chart {
+  flex-basis: auto;
+}
+}
+
+
 .home {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../images/baby-bg.jpg) no-repeat;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/baby-bg.jpg) no-repeat;

@@ -128,16 +128,21 @@
 
          <div class="row align-items-center">
             <div class="col-md-6">
-               <img src="images/baby-bg2.jpg" class="w-100" alt="Neonatal Bebek Ölüm,Neonatal,Bebek">
+               <div class="container_chart">
+                  <div class="chart">
+                      <canvas id="barchart" width="300" height="300"></canvas>
+                  </div>
+              </div>
             </div>
             <div class="col-md-6">
                <span>What is our goal?</span>
                <h3 class="title">Innovative Solutions to Reduce Neonatal Mortality</h3>
-               <p>Our project, which aims to reduce the neonatal mortality rate of all women of childbearing age between
-                  18-45,
-                  offers various solutions to ensure that mothers have a conscious pregnancy process and prevent
-                  the risk of infant death.</p>
-
+               <p>Neonatal infant mortality rates are an important measure of neonatal health outcomes in different regions around the world.
+                   With this data in mind, our goal is to reduce neonatal infant mortality rates and build a healthier future.
+                   There are differences between the regions represented in the table. <b> In Africa the neonatal mortality rate is 21.25%, in Asia it is 13.28%,
+                  in Australia 10.42%, in South America 9.07%, in Europe 3.44% and in North America 3.36%. </b> These data show that many factors play a role
+                   between different regions, such as access to health services, education, economic factors and other social factors.</p>
+                  <!--
                <div class="icons-container">
                   <div class="icons">
                      <i class="fas fa-leaf"></i>
@@ -163,13 +168,14 @@
                      <i class="fas fa-users"></i>
                      <h3>Psychological Support</h3>
                   </div>
-                  <!--
+                  
                   <div class="icons">
                      <i class="fas fa-apple-alt"></i>
                      <h3>Özel beslenme Program</h3>
                   </div>
-               -->
+              
                </div>
+            -->
             </div>
          </div>
 
@@ -502,6 +508,9 @@
 
    <!-- custom js file link  -->
    <script src="js/script.js"></script>
+   <!-- Chart js file links  -->
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script>
+    <script src="js/chart1.js"></script>
 
 </body>
 
