@@ -634,8 +634,8 @@ section {
 }
 
 .blogs .box-container .box{
-  background-color: rgb(216, 216, 216);
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.6);
+  border-color: #f8f8ff;
 }
 
 .blogs .box-container .box:hover {
@@ -668,6 +668,7 @@ section {
 .blogs .box-container .box .content {
   padding: 2rem;
   text-align: center;
+  background-color: #f8f8ff;
 }
 
 .blogs .box-container .box .content h3 {
@@ -697,7 +698,6 @@ section {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 1rem;
 }
 
 .blogs .box-container .box .icons span {
@@ -997,8 +997,6 @@ header h2 {
     display: block;
   }
 }
-
-
 
 @media (max-width: 991px) {
   html {
