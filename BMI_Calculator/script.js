@@ -1,5 +1,4 @@
 function calculate() {
-  // Gerekli DOM elementlerini alın
   var ageInput = document.getElementById('age');
   var weightInput = document.getElementById('weight');
   var heightInput = document.getElementById('height');
@@ -8,7 +7,6 @@ function calculate() {
   var femaleRadio = document.getElementById('f');
   var resultDiv = document.getElementById('result');
 
-  // Kullanıcının girdiği verileri alın
   var age = parseInt(ageInput.value);
   var weight = parseFloat(weightInput.value);
   var height = parseFloat(heightInput.value);
@@ -20,7 +18,6 @@ function calculate() {
     return;
   }
 
-  // Verileri kullanarak hesaplama yapın
   var averageWeight = 0;
   var averageHeight = 0;
   var averageHeadCircumference = 0;
@@ -34,35 +31,36 @@ function calculate() {
     averageHeight = [53.7, 57.1, 59.8, 62.1, 64.0, 65.7, 67.3, 68.7, 70.1, 71.5, 72.8, 74.0][age - 1];
     averageHeadCircumference = [34.1, 35.9, 37.4, 38.6, 39.8, 40.8, 41.7, 42.5, 43.2, 43.9, 44.5, 45.1][age - 1];
   }
-   // Kontrol için doktora gitme durumunu kontrol edin
-   var weightThreshold = averageWeight * 0.1;
-   var heightThreshold = averageHeight * 0.1;
-   var headCircumferenceThreshold = averageHeadCircumference * 0.1;
-   
-   var weightPercentile = calculatePercentile(weight, averageWeight, weightThreshold);
-   var heightPercentile = calculatePercentile(height, averageHeight, heightThreshold);
-   var headCircumferencePercentile = calculatePercentile(headCircumference, averageHeadCircumference, headCircumferenceThreshold);
- 
-   if (weightPercentile < 10 && headCircumferencePercentile < 10 && heightPercentile < 10) {
-     resultDiv.textContent = 'You should go to the doctor.';
-   } else {
-     // Sonuçları gösterin
-     var weightDifference = (weight - averageWeight).toFixed(2);
-     var heightDifference = (height - averageHeight).toFixed(2);
-     var headCircumferenceDifference = (headCircumference - averageHeadCircumference).toFixed(2);
- 
-     if (weight > averageWeight && headCircumference > averageHeadCircumference && height > averageHeight) {
-      resultDiv.textContent = "Your baby is more than average weight by " + weightDifference + ", head circumference is greater than average by " + headCircumferenceDifference + " cm, and average height is "+ heightDifference + " cm"; 
-     }
-     else if (weight > averageWeight && headCircumference > averageHeadCircumference  && height < averageHeight){
+
+  var weightThreshold = averageWeight * 0.1;
+  var heightThreshold = averageHeight * 0.1;
+  var headCircumferenceThreshold = averageHeadCircumference * 0.1;
+
+  var weightPercentile = calculatePercentile(weight, averageWeight, weightThreshold);
+  var heightPercentile = calculatePercentile(height, averageHeight, heightThreshold);
+  var headCircumferencePercentile = calculatePercentile(headCircumference, averageHeadCircumference, headCircumferenceThreshold);
+
+  //#region Algorithms
+  if (weightPercentile < 10 && headCircumferencePercentile < 10 && heightPercentile < 10) {
+    resultDiv.textContent = 'You should go to the doctor.';
+  } else {
+    // Sonuçları gösterin
+    var weightDifference = (weight - averageWeight).toFixed(2);
+    var heightDifference = (height - averageHeight).toFixed(2);
+    var headCircumferenceDifference = (headCircumference - averageHeadCircumference).toFixed(2);
+
+    if (weight > averageWeight && headCircumference > averageHeadCircumference && height > averageHeight) {
+      resultDiv.textContent = "Your baby is more than average weight by " + weightDifference + ", head circumference is greater than average by " + headCircumferenceDifference + " cm, and average height is " + heightDifference + " cm";
+    }
+    else if (weight > averageWeight && headCircumference > averageHeadCircumference && height < averageHeight) {
       resultDiv.textContent = "Your baby is " + (weightDifference) + " more than average weight and head circumference is " + Math.abs(headCircumferenceDifference) + " cm less than average height " + Math.abs(heightDifference) + " cm as little";
-     }
-     else if (weight > averageWeight && headCircumference < averageHeadCircumference  && height > averageHeight){
+    }
+    else if (weight > averageWeight && headCircumference < averageHeadCircumference && height > averageHeight) {
       resultDiv.textContent = "Your baby is " + (weightDifference) + " more than average weight and head circumference is " + Math.abs(headCircumferenceDifference) + " cm less than average height " + Math.abs(heightDifference) + " cm as many";
-     }
-     else if (weight > averageWeight && headCircumference < averageHeadCircumference && height < averageHeight) {
+    }
+    else if (weight > averageWeight && headCircumference < averageHeadCircumference && height < averageHeight) {
       resultDiv.textContent = "Your baby is " + (weightDifference) + " more than average weight and head circumference is " + Math.abs(headCircumferenceDifference) + " cm less than average height " + Math.abs(heightDifference) + " cm as little";
-    } 
+    }
 
     else if (weight < averageWeight && headCircumference > averageHeadCircumference && height > averageHeight) {
       resultDiv.textContent = "Your baby is less than average weight by " + Math.abs(weightDifference) + ", head circumference is greater than average by " + headCircumferenceDifference + " cm, and height is " + heightDifference + " cm more than average height";
@@ -72,100 +70,101 @@ function calculate() {
       resultDiv.textContent = "Your baby is less than average weight by " + Math.abs(weightDifference) + " and head circumference is less than the average value by " + Math.abs(headCircumferenceDifference) + " cm and height by " + heightDifference + " cm more than average height ";
     }
 
-    else if (weight < averageWeight && headCircumference < averageHeadCircumference  && height < averageHeight) {
+    else if (weight < averageWeight && headCircumference < averageHeadCircumference && height < averageHeight) {
       resultDiv.textContent = "Your baby is less than average weight " + Math.abs(weightDifference) + " and head circumference is less than the average value " + Math.abs(headCircumferenceDifference) + " cm less than average height " + Math.abs(heightDifference) + " as little as cm";
     }
 
-    else if (weight > averageWeight && headCircumference == averageHeadCircumference  && height == averageHeight) {
+    else if (weight > averageWeight && headCircumference == averageHeadCircumference && height == averageHeight) {
       resultDiv.textContent = "Your baby is more than average weight by " + (weightDifference) + "";
     }
 
-    else if (weight == averageWeight && headCircumference > averageHeadCircumference  && height == averageHeight) {
+    else if (weight == averageWeight && headCircumference > averageHeadCircumference && height == averageHeight) {
       resultDiv.textContent = "Your baby is more than average head circumference by " + (headCircumference) + "";
     }
 
-    else if (weight == averageWeight && headCircumference == averageHeadCircumference  && height > averageHeight) {
+    else if (weight == averageWeight && headCircumference == averageHeadCircumference && height > averageHeight) {
       resultDiv.textContent = "Your baby is more than average height by " + (heightDifference) + "";
     }
 
-    else if (weight < averageWeight && headCircumference == averageHeadCircumference  && height == averageHeight) {
+    else if (weight < averageWeight && headCircumference == averageHeadCircumference && height == averageHeight) {
       resultDiv.textContent = "Your baby is as small as " + Math.abs(weightDifference) + " average weight ";
     }
 
-    else if (weight == averageWeight && headCircumference < averageHeadCircumference  && height == averageHeight) {
+    else if (weight == averageWeight && headCircumference < averageHeadCircumference && height == averageHeight) {
       resultDiv.textContent = "Your baby is as small as " + Math.abs(headCircumference) + " average head circumference ";
     }
 
-    else if (weight == averageWeight && headCircumference == averageHeadCircumference  && height < averageHeight) {
+    else if (weight == averageWeight && headCircumference == averageHeadCircumference && height < averageHeight) {
       resultDiv.textContent = "Your baby is as small as " + Math.abs(heightDifference) + " average height ";
     }
-     
-//---------------------------------------------------------------------------------------
-    else if(weight == averageWeight && headCircumference < averageHeadCircumference  && height < averageHeight){
+
+    //---------------------------------------------------------------------------------------
+    else if (weight == averageWeight && headCircumference < averageHeadCircumference && height < averageHeight) {
       resultDiv.textContent = "Your baby is " + " smaller than average height " + Math.abs(heightDifference) + " and " + Math.abs(headCircumferenceDifference) + " less than average head average";
     }
 
-    else if(weight == averageWeight && headCircumference < averageHeadCircumference  && height > averageHeight){
+    else if (weight == averageWeight && headCircumference < averageHeadCircumference && height > averageHeight) {
       resultDiv.textContent = "Your baby is " + (heightDifference) + " more than average height and " + " less than average head circumference " + Math.abs(headCircumferenceDifference) + " less than cm";
     }
 
-    else if(weight == averageWeight && headCircumference > averageHeadCircumference  && height < averageHeight){
-      resultDiv.textContent = "Your baby is " + " smaller than average height "+ Math.abs(heightDifference) + " and head circumference is " + Math.abs(headCircumferenceDifference) + " cm more than average";
+    else if (weight == averageWeight && headCircumference > averageHeadCircumference && height < averageHeight) {
+      resultDiv.textContent = "Your baby is " + " smaller than average height " + Math.abs(heightDifference) + " and head circumference is " + Math.abs(headCircumferenceDifference) + " cm more than average";
     }
 
-    else if(weight < averageWeight && headCircumference == averageHeadCircumference  && height < averageHeight){
+    else if (weight < averageWeight && headCircumference == averageHeadCircumference && height < averageHeight) {
       resultDiv.textContent = "Your baby is less than " + Math.abs(heightDifference) + " than average height " + " and your baby is less than average weight " + Math.abs(weightDifference) + " cm";
     }
 
-    else if(weight < averageWeight && headCircumference == averageHeadCircumference  && height > averageHeight){
+    else if (weight < averageWeight && headCircumference == averageHeadCircumference && height > averageHeight) {
       resultDiv.textContent = "Your baby is " + " more than average height" + (heightDifference) + " and your baby is less than average weight by " + Math.abs(weightDifference) + " cm";
     }
 
-    else if(weight > averageWeight && headCircumference == averageHeadCircumference  && height < averageHeight){
+    else if (weight > averageWeight && headCircumference == averageHeadCircumference && height < averageHeight) {
       resultDiv.textContent = "Your baby is " + " smaller than average height " + (heightDifference) + " and your baby is " + (weightDifference) + " cm higher than average weight";
     }
 
     //---------------------------------------------------------------------
 
-    else if (weight < averageWeight && headCircumference > averageHeadCircumference  && height < averageHeight) {
+    else if (weight < averageWeight && headCircumference > averageHeadCircumference && height < averageHeight) {
       resultDiv.textContent = "Your baby is less than average weight " + Math.abs(weightDifference) + " and head circumference is " + Math.abs(headCircumferenceDifference) + " cm more than average height " + Math.abs(heightDifference) + " as little as cm";
     }
 
-    else if (weight < averageWeight && headCircumference > averageHeadCircumference  && height == averageHeight) {
-      resultDiv.textContent = "Your baby is less than average weight " + Math.abs(weightDifference) + " and head circumference is " + Math.abs(headCircumferenceDifference) + " cm more than average  " ;
+    else if (weight < averageWeight && headCircumference > averageHeadCircumference && height == averageHeight) {
+      resultDiv.textContent = "Your baby is less than average weight " + Math.abs(weightDifference) + " and head circumference is " + Math.abs(headCircumferenceDifference) + " cm more than average  ";
     }
 
-    else if (weight > averageWeight && headCircumference < averageHeadCircumference  && height == averageHeight) {
-      resultDiv.textContent = "Your baby is more than average weight " + Math.abs(weightDifference) + " and head circumference is " + Math.abs(headCircumferenceDifference) + " cm less than average  " ;
+    else if (weight > averageWeight && headCircumference < averageHeadCircumference && height == averageHeight) {
+      resultDiv.textContent = "Your baby is more than average weight " + Math.abs(weightDifference) + " and head circumference is " + Math.abs(headCircumferenceDifference) + " cm less than average  ";
     }
 
-    else if (weight < averageWeight && headCircumference < averageHeadCircumference  && height == averageHeight) {
-      resultDiv.textContent = "Your baby is less than average weight " + Math.abs(weightDifference) + " and head circumference is " + Math.abs(headCircumferenceDifference) + " cm less than average  " ;
+    else if (weight < averageWeight && headCircumference < averageHeadCircumference && height == averageHeight) {
+      resultDiv.textContent = "Your baby is less than average weight " + Math.abs(weightDifference) + " and head circumference is " + Math.abs(headCircumferenceDifference) + " cm less than average  ";
     }
 
-    else if (weight > averageWeight && headCircumference > averageHeadCircumference  && height == averageHeight) {
-      resultDiv.textContent = "Your baby is more than average weight " + Math.abs(weightDifference) + " and head circumference is " + Math.abs(headCircumferenceDifference) + " cm more than average  " ;
+    else if (weight > averageWeight && headCircumference > averageHeadCircumference && height == averageHeight) {
+      resultDiv.textContent = "Your baby is more than average weight " + Math.abs(weightDifference) + " and head circumference is " + Math.abs(headCircumferenceDifference) + " cm more than average  ";
     }
 
-    else if(weight < averageWeight && headCircumference == averageHeadCircumference  && height < averageHeight){
+    else if (weight < averageWeight && headCircumference == averageHeadCircumference && height < averageHeight) {
       resultDiv.textContent = "Your baby is " + " smaller than average height " + (heightDifference) + " and your baby is " + (weightDifference) + " cm shorter than average weight";
     }
 
-    else if(weight > averageWeight && headCircumference == averageHeadCircumference  && height > averageHeight){
+    else if (weight > averageWeight && headCircumference == averageHeadCircumference && height > averageHeight) {
       resultDiv.textContent = "Your baby is " + " more than average height " + (heightDifference) + " and your baby is " + (weightDifference) + " cm higher than average weight";
     }
 
-    else if(weight == averageWeight && headCircumference > averageHeadCircumference  && height > averageHeight){
+    else if (weight == averageWeight && headCircumference > averageHeadCircumference && height > averageHeight) {
       resultDiv.textContent = "Your baby is " + (heightDifference) + " more than average height and " + " more than average head circumference " + Math.abs(headCircumferenceDifference) + " less than cm";
     }
 
-     else {
+    else {
       resultDiv.textContent = "Your baby is of average weight, height, and head circumference.";
     }
-   }
- }
+  }
+}
+//#endregion
 
- function calculatePercentile(value, averageValue, threshold) {
+function calculatePercentile(value, averageValue, threshold) {
   if (value > averageValue + threshold) {
     return 100;
   } else if (value < averageValue - threshold) {
@@ -177,13 +176,7 @@ function calculate() {
 }
 
 
-
-
-
-
-
-
-
+/* Draggle JS Coding Start */
 
 // Select DOM elements
 const showModalBtn = document.querySelector(".show-modal");
@@ -197,46 +190,46 @@ let isDragging = false, startY, startHeight;
 
 // Show the bottom sheet, hide body vertical scrollbar, and call updateSheetHeight
 const showBottomSheet = () => {
-    bottomSheet.classList.add("show");
-    document.body.style.overflowY = "hidden";
-    updateSheetHeight(50);
+  bottomSheet.classList.add("show");
+  document.body.style.overflowY = "hidden";
+  updateSheetHeight(50);
 }
 
 const updateSheetHeight = (height) => {
-    sheetContent.style.height = `${height}vh`; //updates the height of the sheet content
-    // Toggles the fullscreen class to bottomSheet if the height is equal to 100
-    bottomSheet.classList.toggle("fullscreen", height === 100);
+  sheetContent.style.height = `${height}vh`; //updates the height of the sheet content
+  // Toggles the fullscreen class to bottomSheet if the height is equal to 100
+  bottomSheet.classList.toggle("fullscreen", height === 100);
 }
 
 // Hide the bottom sheet and show body vertical scrollbar
 const hideBottomSheet = () => {
-    bottomSheet.classList.remove("show");
-    document.body.style.overflowY = "auto";
+  bottomSheet.classList.remove("show");
+  document.body.style.overflowY = "auto";
 }
 
 // Sets initial drag position, sheetContent height and add dragging class to the bottom sheet
 const dragStart = (e) => {
-    isDragging = true;
-    startY = e.pageY || e.touches?.[0].pageY;
-    startHeight = parseInt(sheetContent.style.height);
-    bottomSheet.classList.add("dragging");
+  isDragging = true;
+  startY = e.pageY || e.touches?.[0].pageY;
+  startHeight = parseInt(sheetContent.style.height);
+  bottomSheet.classList.add("dragging");
 }
 
 // Calculates the new height for the sheet content and call the updateSheetHeight function
 const dragging = (e) => {
-    if(!isDragging) return;
-    const delta = startY - (e.pageY || e.touches?.[0].pageY);
-    const newHeight = startHeight + delta / window.innerHeight * 100;
-    updateSheetHeight(newHeight);
+  if (!isDragging) return;
+  const delta = startY - (e.pageY || e.touches?.[0].pageY);
+  const newHeight = startHeight + delta / window.innerHeight * 100;
+  updateSheetHeight(newHeight);
 }
 
 // Determines whether to hide, set to fullscreen, or set to default 
 // height based on the current height of the sheet content
 const dragStop = () => {
-    isDragging = false;
-    bottomSheet.classList.remove("dragging");
-    const sheetHeight = parseInt(sheetContent.style.height);
-    sheetHeight < 25 ? hideBottomSheet() : sheetHeight > 75 ? updateSheetHeight(100) : updateSheetHeight(50);
+  isDragging = false;
+  bottomSheet.classList.remove("dragging");
+  const sheetHeight = parseInt(sheetContent.style.height);
+  sheetHeight < 25 ? hideBottomSheet() : sheetHeight > 75 ? updateSheetHeight(100) : updateSheetHeight(50);
 }
 
 dragIcon.addEventListener("mousedown", dragStart);
@@ -249,3 +242,5 @@ document.addEventListener("touchend", dragStop);
 
 sheetOverlay.addEventListener("click", hideBottomSheet);
 showModalBtn.addEventListener("click", showBottomSheet);
+
+/* Draggle JS Coding End */
