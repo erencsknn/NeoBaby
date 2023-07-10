@@ -229,7 +229,7 @@ section{
 }
 
 .home{
-   background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../images/home-bg.jpg) no-repeat;
+   background:linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../images/baby-bg.jpg) no-repeat;
    background-size: cover;
    background-position: center;
    background-attachment: fixed;
@@ -308,6 +308,10 @@ section{
             background: $white;
             box-shadow: $box-shadow;
             transform: translateY(-1rem);
+         }
+         i{
+            font-size: 4em;
+            margin-bottom: 0.4em;
          }
 
          img{
@@ -425,74 +429,6 @@ section{
    }
 }
 
-.contact{
-
-   .contact-info-container{
-      @include gird(30rem);
-      margin-bottom: 3rem;
-
-      .box{
-         border:$border;
-         padding:3rem 2rem;
-         border:$border;
-         text-align: center;
-
-         &:hover i{
-            background: $main-color;
-            color:$white;
-         }
-
-         i{
-            height: 6rem;
-            width: 6rem;
-            line-height: 6rem;
-            border:$border;
-            color:$main-color;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-         }
-
-         h3{
-            @include title-text(2rem);
-            padding:1rem 0;
-         }
-
-         p{
-            @include graph-text(1.5rem);
-         }
-      }
-   }
-
-   form{
-
-      h3{
-         @include title-text(3rem);
-         padding-bottom: 1rem;
-      }
-
-      .box{
-         margin:.7rem 0;
-         border:$border;
-         font-size: 1.6rem;
-         width: 100%;
-         padding:1.2rem 1.4rem;
-
-         &:focus{
-            background: $main-color;
-            color:$white;
-
-            &::placeholder{
-               color:$light-bg;
-            }
-         }
-      }
-
-      textarea{
-         height: 15rem;
-         resize: none;
-      }
-   }
-}
 
 .blogs{
    background: $light-bg;
@@ -638,13 +574,125 @@ section{
 }
 
 
-
-
-
-
-
-
-
+.container2 {
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+   margin-top:20px;
+ }
+ 
+ .price-plan {
+   background-color: #ffffff;
+    box-shadow: 0px 2px 15px 0px rgba(0,0,0,0.5);
+    border-radius: 4px;
+    flex: 1;
+    padding: 30px 30px 30px;
+    margin: 2%;
+    min-width: 200px;
+    max-width: 300px;
+   text-align: center;
+ }
+ 
+ .fancy {
+   margin-top: 20px;
+   margin-bottom:20px;
+   transform: scale(1.1);
+   background-image: url(http://www.webdesignhot.com/wp-content/uploads/2015/08/Colorful-Low-Poly-Abstract-Background-Vector-Illustration.jpg);
+   background-size: 200% 200%;
+   background-position-x:50%;
+   color:white;
+ }
+ 
+ .price-points {
+   list-style-type:none;
+   padding:0px;
+   font-size: 1.5em;
+ }
+ 
+ .price-points li {
+   padding:10px 0px;
+ }
+ 
+ .price-points li:not(:last-of-type) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+ }
+ 
+ .price {
+   font-size:32px;
+   font-weight:300;
+ }
+ 
+ .price sub,
+ .price sup {
+   font-size:16px;
+   font-weight:100;
+ }
+ 
+ /* First Row */
+ .polyFirst {
+   width: 130px;
+   padding: 10px 10px;
+   border: none;
+   background-image: url(http://www.webdesignhot.com/wp-content/uploads/2015/08/Colorful-Low-Poly-Abstract-Background-Vector-Illustration.jpg);
+   background-size: 300%;
+   color: white;
+   font-family: "Raleway", sans-serif;
+   font-size: 16px;
+   cursor: pointer;
+   border-radius: 5px;
+   transition-duration: 0.5s;
+ }
+ 
+ .polyFirst:hover {
+   background-size: 150%;
+   transition-duration: 0.3s;
+   transform: scale(1.2);
+ }
+ 
+ .polyFirst:active {
+   transform:scale(1.15);
+   transition-duration: 0.1s;
+ }
+ /*          */
+ 
+ /* Fourth Row */
+ .polyFourth {
+   width: 150px;
+   padding: 10px 18px;
+   border: none;
+   background-color:white;
+   background-size: 300%;
+   color: #000000;
+   font-family: "Raleway", sans-serif;
+   font-size: 18px;
+   font-weight:bold;
+   cursor: pointer;
+   border-radius: 5px;
+   transition-duration: 0.5s;
+ }
+ 
+ .polyFourth:hover {
+   background-size: 150%;
+   transition-duration: 0.3s;
+   transform: scale(1.2);
+ }
+ 
+ .polyFourth:active {
+   transform:scale(1.15);
+   transition-duration: 0.1s;
+ }
+ 
+ /*          */
+ 
+ .poly2 {
+   background-position-x: 15%;
+ }
+ 
+ .poly3 {
+   background-position-x: 45%;
+ }
+ /*            */
 
 
 
