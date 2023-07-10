@@ -1,0 +1,320 @@
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 17px;
+}
+
+img {
+    border: 0;
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+
+}
+
+#section_p{
+    padding: 0px 4em;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+/* Pop-up Section CSS Starts */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9999;
+    display: none;
+}
+.popup.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.popup .content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* Pop-up Section CSS End */
+
+.mtitle {
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 70 px;
+    padding-top: 30px;
+
+}
+
+.mnav ul {
+    display: inline;
+    list-style: none;
+}
+
+.mnav li {
+    float: left;
+    margin: 0px 2px 0px 2px;
+    color: #444444;
+}
+
+.mnav a {
+    float: left;
+    text-decoration: none;
+    color: #9f55ff;
+}
+
+.mnav a:hover {
+    text-decoration: underline;
+}
+
+
+.box {
+    width: 850px;
+    background: #ebe8e8;
+    border-radius: 12px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.mline {
+    width: 100%;
+    font-size: 15px;
+    float: left;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    overflow: hidden;
+   
+}
+
+.mleft,
+.mlabel {
+    width: 200px;
+    padding-top: 10px;
+    font-size: 17px;
+    float: left;
+    text-align: right;
+    border-radius: 40px;
+    padding-right: 10px;
+    padding-left: 50px;
+}
+
+.mmiddle{
+    width: 95px;
+    padding-top: 5px;
+    float: left;
+    border-radius: 40px;
+    box-shadow: rgba(0, 0, 0, 0.2) 2px 6px;
+}
+
+.mres {
+    width: 95px;
+    padding-top: 5px;
+    float: left;
+    border-radius: 40px;
+   
+}
+
+.mright {
+    width: 180px;
+    float: left;
+    padding-top: 5px;
+    padding-left: 150px;
+    border-radius: 40px;
+
+}
+
+.mmiddle input
+{
+    width: 99%;
+    font-size: 20px;
+    height: 24px;
+    border: 1px solid #9FA4FF;
+    border-radius: 40px;
+    text-align:center;
+    
+}
+
+.mres input {
+    width: 99%;
+    font-size: 20px;
+    height: 24px;
+    border: 1px solid #9FA4FF;
+    border-radius: 40px;
+    padding-left: 80px;
+    
+   
+}
+
+.mmiddle select {
+    width: 99%;
+    height: 24px;
+    font-size: 20px;
+    border: 1px solid #9FA4FF;
+    border-radius: 40px;
+    padding-left: 30px;
+}
+
+.mright select {
+    height: 28px;
+    width: 90px;
+    margin-left: 2px;
+    font-size: 16px;
+    border: 1px solid #550b1b;
+    border-radius: 40px;
+    padding-left: 35px;
+    box-shadow: rgba(0, 0, 0, 0.2) 2px 6px; 
+
+}
+
+.mdesc {
+    float: left;
+    font-size: 15px;
+    width: 100%;
+    
+}
+
+.mcalc {
+    width: 70%;
+    float: left;
+    padding-left: 55%;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    border-radius: 45px;
+    
+    
+
+
+}
+
+.mcalc input {
+    width: 90px;
+    height: 28px;
+    font-size: 16px;
+    border-radius: 30px;
+    margin-right: 65px;
+    box-shadow: rgba(0, 0, 0, 0.2) 2px 6px;
+    background-color:rgb(149, 196, 235);
+
+}
+
+.popup {
+    display: none;
+}
+
+.popup.active {
+    display: block;
+}
+
+.popup .content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.popup .content p {
+    margin-bottom: 10px;
+}
+
+.popup .content button {
+    width: 80px;
+    height: 30px;
+    background-color: #550b1b;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.countrytable {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 15px;
+    
+}
+
+.countrytable td,
+.countrytable th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+.countrytable th {
+    background-color: #dddddd;
+}
+
+.mtitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+.stitle {
+    BORDER-BOTTOM: #9FA4FF 1px solid;
+    HEIGHT: 20px
+}
+
+.sline {
+    BORDER-BOTTOM: #e4e4e4 1px dashed;
+    HEIGHT: 22px
+
+}
+
+.sboxed {
+    padding: 1px;
+    border: 1px solid #9FA4FF;
+    color: #385B88;
+}
+
+
+/* Media Query Section Starts */
+
+@media screen and (max-width:800px) {
+    form{
+        margin-left: 20em;
+    }
+}
+
+
+@media screen and (max-width:400px) {
+    form{
+        margin-left: 30em;
+    }
+}
+
+
+
+/* Media Query Section End */

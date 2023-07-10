@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css">
+      <title>Rh and Blood Calculator</title>
+	  <script src="script.js"></script>
+    </head>
+
+<style type="text/css">
+
+
+<!--tablo css bilgileri-->   
+TABLE.countrytable {
+	BORDER-RIGHT: #9FA4FF 1px solid; BORDER-TOP: #9FA4FF 1px solid; BACKGROUND: #ffff; MARGIN: 1em 1em 1em 0px; BORDER-LEFT: #9FA4FF 1px solid; BORDER-BOTTOM: #9FA4FF 1px solid; BORDER-COLLAPSE: collapse
+}
+.countrytable TD {
+	BORDER-RIGHT: #9FA4FF 1px solid; PADDING-RIGHT: 0.2em; BORDER-TOP: #9FA4FF 1px solid; PADDING-LEFT: 0.2em; PADDING-BOTTOM: 0.2em; BORDER-LEFT: #9FA4FF 1px solid; PADDING-TOP: 0.2em; BORDER-BOTTOM: #9FA4FF 1px solid
+}
+.countrytable TH {
+	BORDER-RIGHT: #cc2121 1px solid; PADDING-RIGHT: 0.2em; BORDER-TOP: #b33535 1px solid; PADDING-LEFT: 0.2em; PADDING-BOTTOM: 0.2em; BORDER-LEFT: #aaa 1px solid; PADDING-TOP: 0.2em; BORDER-BOTTOM: #aaa 1px solid
+}
+.mmiddle select{
+height:28px;
+}
+</style>
+<body 
+style="background-color:#cdf4f7" onload='document.bt.a.focus()'>
+
+
+<form name="bt">
+
+<div class="box"> 
+<div class="mtitle">Child Blood Type Calculator</div>
+
+<div class="mline">
+<div class="mleft">Mother Blood Type:
+</div>
+<div class="mmiddle">
+<select name=msel>
+<option value=a>A</option>
+<option value=b>B</option>
+<option value=ab>AB</option>
+<option value=o>O</option>
+</select>
+</div>
+<div class="mright">
+<select name=msel2>
+<option value=p>+</option>
+<option value=n>-</option>
+</select>
+</div></div>
+
+
+<div class="box"> 
+<div class="mline">
+<div class="mleft">Father Blood Type:
+</div> 
+<div class="mmiddle">
+<select name=fsel>
+<option value=a>A</option>
+<option value=b>B</option>
+<option value=ab>AB</option>
+<option value=o>O</option>
+</select>
+</div>
+<div class="mright">
+<select name=fsel2>
+<option value=p>+</option>
+<option value=n>-</option>
+</select>
+</div></div>
+
+ 
+<div class="mline">
+<div class="mleft">
+Type A Chance:
+</div>
+<div class="mmiddle">
+<input class="forminputcontent" name=resa style="color:blue;background-color:#ffffff"readonly>
+</div>
+<div class="mright">
+%
+</div></div>
+
+
+
+<div class="mline">
+<div class="mleft">Type B Chance:
+</div>
+<div class="mmiddle">
+<input class="forminputcontent" name=resb style="color:blue;background-color:#ffffff" readonly>
+</div>
+<div class="mright">
+%
+</div></div>
+
+
+<div class="mline">
+<div class="mleft">Type AB Chance:
+</div>
+<div class="mmiddle">
+<input class="forminputcontent" name=resab style="color:blue;background-color:#ffffff" readonly>
+</div>
+<div class="mright">
+%
+</div></div>
+
+<div class="mline">
+<div class="mleft">Type O Chance:
+</div>
+<div class="mmiddle">
+<input class="forminputcontent" name=reso style="color:blue;background-color:#ffffff" readonly >
+</div>
+<div class="mright">
+%
+</div></div>
+
+
+<div class="mline">
+<div class="mleft">Child RH+ Chance:
+</div>
+<div class="mmiddle">
+<input class="forminputcontent" name=res2 style="color:blue;background-color:#ffffff" readonly>
+</div>
+<div class="mright">
+%
+</div></div>
+
+<div class="mline">
+<div class="mleft">Child RH- Chance:
+</div>
+<div class="mmiddle">
+<input class="forminputcontent" name=res3 style="color:blue;background-color:#ffffff" readonly>
+</div>
+<div class="mright">
+%
+</div></div>
+
+
+<div class="mcalc">
+<input onclick="calculateBt()" type="button" name="Calculate" value="Calculate"/>
+</div>
+
+<div class="popup" id="popup">
+	<div class="content">
+		<p>If the mother has a negative (-) blood type and the baby has a positive (+) blood type, blood incompatibility will most likely occur, 
+			please contact your doctor.</p>
+		<button onclick="document.getElementById('popup').classList.remove('active')">close</button>
+	</div>
+</div>
+</div>
+</form>
+
+<hr width=100% style="float:left">
+<p>
+	
+
+<div class="mtitle">Blood Type Genetic Basis:</div>
+<section style="border-radius: 10px;">
+<p id="section_p" style="font-size:15px">
+	
+In genetics, blood type gene has two alleles, each allele has genotype A, B or O.
+The A and B are dominant, and O is recessive. So allele A combined with allele O is type A.
+Similarly, BO is type B, AA is type A</a>, BB is type B</a>,
+OO is type O</a>, and AB is type AB</a>.<br><br>
+If both parents have type A blood, then the alleles could be AA or AO, thus the allele A frequency is 75%,
+allele O frequency is 25% for both parents. <br>
+So the chance of alleles OO is 25% &#215; 25% = 6.25%, <br>
+alleles AA is 75% &#215; 75% = 56.25%, <br>
+alleles AO is 75% &#215; 25% = 18.75%, <br>
+alleles OA is 25% &#215; 75% = 18.75%.<br>
+Since AA, AO and OA are blood type A, and OO is blood type O, thus their child has 6.25% chance to be blood type O and 93.75% chance to be blood type A.
+<br><br>
+The +/- is called the rhesus factor, with + being dominant, and - being recessive.<br>
+So if both parents are -, the kids are always -, otherwise the kids might be + or -.
+<br><br>
+</p>
+
+<center>Child Blood Type Estimate Table:<BR>
+<table class="countrytable" style="width: 85% ;">
+<tbody>
+	<tr bgColor=#dddddd>
+		<td colspan=2 rowspan=2 bgColor=#ffffff></td>
+		<td colspan=4 align=center>Father's Blood Type</td>
+	</tr>
+	<tr bgColor=#dddddd>
+		<td width=50><b>A</b></td>
+		<td width=50><b>B</b></td>
+		<td width=50><b>AB</b></td>
+		<td width=50><b>O</b></td>
+	</tr>
+	<tr>
+		<td align=center width=100 rowspan=5 bgColor=#dddddd>Mother's<br>Blood<br>Type</td>
+	</tr>
+	<tr>
+		<td width=50 bgColor=#dddddd><b>A</b></td>
+		<td width=50>A/O</td>
+		<td width=50>A/B/AB/O</td>
+		<td width=50>A/B/AB</td>
+		<td width=50>A/O</td>
+	</tr>
+	<tr>
+		<td width=50 bgColor=#dddddd><b>B</b></td>
+		<td width=50>A/B/AB/O</td>
+		<td width=50>B/O</td>
+		<td width=50>A/B/AB</td>
+		<td width=50>B/O</td>
+	</tr>
+	<tr>
+		<td width=50 bgColor=#dddddd><b>AB</b></td>
+		<td width=50>A/B/AB</td>
+		<td width=50>A/B/AB</td>
+		<td width=50>A/B/AB</td>
+		<td width=50>A/B</td>
+	</tr>
+	<tr>
+		<td width=50 bgColor=#dddddd><b>O</b></td>
+		<td width=50>A/O</td>
+		<td width=50>B/O</td>
+		<td width=50>A/B</td>
+		<td width=50>O</td>
+	</tr>
+</tbody>
+</table>
+</center>
+<br><br>
+</p>
+</section>
+</body>
+</html>
