@@ -1,10 +1,8 @@
-
 const cols = 3;
 const main = document.getElementById('main');
 let parts = [];
 
 let images = [
-<<<<<<< HEAD
   //1.grup
   "https://images.unsplash.com/photo-1522075782449-e45a34f1ddfb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
   "https://images.unsplash.com/photo-1600220092657-06baceb1dca9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1570&q=80",
@@ -47,12 +45,6 @@ let images = [
   // "https://images.unsplash.com/photo-1523437250197-99a61e7877e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1633&q=80",
   // "https://images.unsplash.com/photo-1511184117514-74b2b39697a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
   // "https://images.unsplash.com/photo-1669269972912-cfd59d927630?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80",
-=======
-  "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-  "https://images.unsplash.com/photo-1544198365-f5d60b6d8190?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2550&q=80",
-  "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80",
-  "https://images.unsplash.com/photo-1477332552946-cfb384aeaf1c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
->>>>>>> 97eea700ada793b52baabdb22dc375524da1ec00
 
   
 ];
@@ -72,7 +64,7 @@ for (let col = 0; col < cols; col++) {
   let img = document.createElement('img');
   img.src = images[current];
   el.appendChild(img);
-  part.style.setProperty('--x', -100/cols*col+'vw');
+  part.style.setProperty('--x', -100 / cols * col + 'vw');
   part.appendChild(el);
   main.appendChild(part);
   parts.push(part);
@@ -92,16 +84,16 @@ function go(dir) {
 
     function up(part, next) {
       part.appendChild(next);
-      gsap.to(part, {...animOptions, y: -window.innerHeight}).then(function () {
+      gsap.to(part, { ...animOptions, y: -window.innerHeight }).then(function () {
         part.children[0].remove();
-        gsap.to(part, {duration: 0, y: 0});
+        gsap.to(part, { duration: 0, y: 0 });
       })
     }
 
     function down(part, next) {
       part.prepend(next);
-      gsap.to(part, {duration: 0, y: -window.innerHeight});
-      gsap.to(part, {...animOptions, y: 0}).then(function () {
+      gsap.to(part, { duration: 0, y: -window.innerHeight });
+      gsap.to(part, { ...animOptions, y: 0 }).then(function () {
         part.children[1].remove();
         playing = false;
       })
@@ -124,7 +116,7 @@ function go(dir) {
   }
 }
 
-window.addEventListener('keydown', function(e) {
+window.addEventListener('keydown', function (e) {
   if (['ArrowDown', 'ArrowRight'].includes(e.key)) {
     go(1);
   }
@@ -135,16 +127,16 @@ window.addEventListener('keydown', function(e) {
 });
 
 
-window.addEventListener('keydown', function(e) {
-    if (e.key === 'ArrowDown') {
-      go(1);
-    } else if (e.key === 'ArrowUp') {
-      go(-1);
-    }
-  });
+window.addEventListener('keydown', function (e) {
+  if (e.key === 'ArrowDown') {
+    go(1);
+  } else if (e.key === 'ArrowUp') {
+    go(-1);
+  }
+});
 
 function lerp(start, end, amount) {
-  return (1-amount)*start+amount*end
+  return (1 - amount) * start + amount * end
 }
 
 const cursor = document.createElement('div');
@@ -164,25 +156,25 @@ document.body.appendChild(cursor);
 document.body.appendChild(cursorF);
 
 if ('ontouchstart' in window) {
-    cursor.style.display = 'none';
-    cursorF.style.display = 'none';
-  }
+  cursor.style.display = 'none';
+  cursorF.style.display = 'none';
+}
 
-cursor.style.setProperty('--size', size+'px');
-cursorF.style.setProperty('--size', sizeF+'px');
+cursor.style.setProperty('--size', size + 'px');
+cursorF.style.setProperty('--size', sizeF + 'px');
 
-window.addEventListener('mousemove', function(e) {
+window.addEventListener('mousemove', function (e) {
   pageX = e.clientX;
   pageY = e.clientY;
-  cursor.style.left = e.clientX-size/2+'px';
-  cursor.style.top = e.clientY-size/2+'px';
+  cursor.style.left = e.clientX - size / 2 + 'px';
+  cursor.style.top = e.clientY - size / 2 + 'px';
 });
 
 function loop() {
   cursorX = lerp(cursorX, pageX, followSpeed);
   cursorY = lerp(cursorY, pageY, followSpeed);
-  cursorF.style.top = cursorY - sizeF/2 + 'px';
-  cursorF.style.left = cursorX - sizeF/2 + 'px';
+  cursorF.style.top = cursorY - sizeF / 2 + 'px';
+  cursorF.style.left = cursorX - sizeF / 2 + 'px';
   requestAnimationFrame(loop);
 }
 
@@ -193,19 +185,19 @@ let endY;
 let clicked = false;
 
 function mousedown(e) {
-  gsap.to(cursor, {scale: 4.5});
-  gsap.to(cursorF, {scale: .4});
+  gsap.to(cursor, { scale: 4.5 });
+  gsap.to(cursorF, { scale: .4 });
 
   clicked = true;
   startY = e.clientY || e.touches[0].clientY || e.targetTouches[0].clientY;
 }
 function mouseup(e) {
-  gsap.to(cursor, {scale: 1});
-  gsap.to(cursorF, {scale: 1});
+  gsap.to(cursor, { scale: 1 });
+  gsap.to(cursorF, { scale: 1 });
 
   endY = e.clientY || endY;
   if (clicked && startY && Math.abs(startY - endY) >= 40) {
-    go(!Math.min(0, startY - endY)?1:-1);
+    go(!Math.min(0, startY - endY) ? 1 : -1);
     clicked = false;
     startY = null;
     endY = null;
@@ -213,7 +205,7 @@ function mouseup(e) {
 }
 window.addEventListener('mousedown', mousedown, false);
 window.addEventListener('touchstart', mousedown, false);
-window.addEventListener('touchmove', function(e) {
+window.addEventListener('touchmove', function (e) {
   if (clicked) {
     endY = e.touches[0].clientY || e.targetTouches[0].clientY;
   }
@@ -224,7 +216,7 @@ window.addEventListener('mouseup', mouseup, false);
 let scrollTimeout;
 function wheel(e) {
   clearTimeout(scrollTimeout);
-  setTimeout(function() {
+  setTimeout(function () {
     if (e.deltaY < -40) {
       go(-1);
     }
