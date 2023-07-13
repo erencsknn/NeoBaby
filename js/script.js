@@ -1,10 +1,15 @@
+let loginForm = document.querySelector('.login-form');
+
 document.querySelector('#login-btn').onclick = () =>{
-   window.location.href = 'login.html';
+   loginForm.classList.add('active');
+}
+
+document.querySelector('#close-login-form').onclick = () =>{
+   loginForm.classList.remove('active');
 }
 
 let menu = document.querySelector('#menu-btn');
 let navbar = document.querySelector('.header .nav');
-let header = document.querySelector('.header'); // Yeni satır: header seçicisi eklendi
 
 menu.onclick = () =>{
    menu.classList.toggle('fa-times');
@@ -12,14 +17,14 @@ menu.onclick = () =>{
 }
 
 window.onscroll = () =>{
-   // loginForm.classList.remove('active'); // loginForm değişkeni tanımlanmadığı için bu satırı sildik
+   loginForm.classList.remove('active');
    menu.classList.remove('fa-times');
    navbar.classList.remove('active');
 
    if(window.scrollY > 0){
-      header.classList.add('active'); // Header'ın active sınıfını ekledik
+      document.querySelector('.header').classList.add('active');
    }else{
-      header.classList.remove('active'); // Header'dan active sınıfını kaldırdık
+      document.querySelector('.header').classList.remove('active');
    }
 }
 
