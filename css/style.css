@@ -519,43 +519,113 @@ section {
     color: #512a10
 }
 
-.newsletter {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/newsletter-bg.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
-    text-align: center
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
+.team-member {
+    margin: 0;
+    padding: 8rem;
+    font-family: "inter", sans-serif;
+    background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
+    background-size:cover;
+          -webkit-animation: slidein 100s;
+          animation: slidein 100s;
+  
+          -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  
+          -webkit-animation-direction: alternate;
+          animation-direction: alternate;  
 }
+@-webkit-keyframes slidein {
+    from {background-position: top; background-size:3000px; }
+    to {background-position: -100px 0px;background-size:2750px;}
+    }
+    
+    @keyframes slidein {
+    from {background-position: top;background-size:3000px; }
+    to {background-position: -100px 0px;background-size:2750px;}
+    
+    }
 
-.newsletter h3 {
+.team-member h3 {
+    display: flex;
+    justify-content: center;
     font-size: 4rem;
     color: #fff;
-    text-transform: uppercase;
     margin-bottom: 0
 }
 
-.newsletter p {
-    padding: 1rem 0;
-    font-size: 2rem;
-    color: #fff
-}
-
-.newsletter form {
-    margin: 1rem auto;
-    max-width: 60rem;
-    background: #fff;
+.drop-container {
+    row-gap: 1rem;
+    padding: 2rem;
     display: flex;
-    padding: 1rem
-}
-
-.newsletter form .link-btn {
-    margin-top: 0
-}
-
-.newsletter form .email {
-    width: 100%;
-    padding: 0 1.4rem;
-    font-size: 1.6rem
-}
+  }
+  .drop-container > div:nth-child(1) {
+    background: #fff;
+  }
+  .drop-container > div:nth-child(2) {
+    background: #fff;
+    margin-left: 20px;
+  }
+  .drop-container > div:nth-child(3) {
+    background: #fff;
+    margin-left: 20px;
+  }
+  .drop-container > div:nth-child(4) {
+    background: #fff;
+    margin-left: 20px;
+  }
+  .drop-container > div:nth-child(5) {
+    background: #fff;
+    margin-left: 20px;
+  }
+  
+  .drop__card,
+  .drop__data {
+    display: flex;
+    align-items: center;
+  }
+  
+  .drop__card {
+    width: auto;
+    justify-content: space-between;
+    padding: 0.75rem 1.25rem 0.75rem 0.75rem;
+    box-shadow: 4px 4px 16px #979494, -2px -2px 16px #696464;
+    border-radius: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .drop__img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    object-fit: cover;
+  }
+  
+  .drop__name {
+    font-size: 1.5rem;
+    color: #272a3a;
+    font-weight: 500;
+  }
+  
+  .drop__profession {
+    font-size: 1rem;
+    color: #8a8eaa;
+  }
+  
+  .drop__contact{
+    margin-left: 30px;
+  }
+  .drop__contact a{
+    font-size: 20px;
+    color: #666;
+  }
+  .drop__contact a:hover{
+    color: #413d3d;
+  }
 
 .footer {
     text-align: center
