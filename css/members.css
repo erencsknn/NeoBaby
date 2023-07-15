@@ -38,6 +38,7 @@
     padding: 1rem;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .drop-container > div {
@@ -50,8 +51,12 @@
 
   .drop__card,
   .drop__data {
-    display: flex;
     align-items: center;
+  }
+
+  .drop__card{
+    margin-left: 1em;
+    text-align: center;
   }
 
   .drop__img {
@@ -69,12 +74,14 @@
   }
 
   .drop__profession {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
     color: #8a8eaa;
   }
+  
 
   .drop__contact {
-    margin-left: 30px;
+    margin-left: auto;
     margin-right: 10px;
   }
 
