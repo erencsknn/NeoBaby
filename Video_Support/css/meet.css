@@ -85,7 +85,7 @@ html {
   
   .header.active {
     padding: 2rem 0;
-    background: #d93ce5;
+    background-color: #d93ce5;
     opacity: 0.95;
   }
   

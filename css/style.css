@@ -101,7 +101,7 @@ section {
 }
 
 .header #menu-btn {
-    display: none
+    display: none;
 }
 
 .login-form {
@@ -690,6 +690,12 @@ section {
 }
 
 @media(max-width: 768px) {
+
+    .header #menu-btn {
+        display:contents;
+    }
+
+
     .login-form form {
         padding: 3rem 2rem
     }
@@ -737,4 +743,5 @@ section {
     html {
         font-size: 50%
     }
+    
 }
