@@ -27,7 +27,7 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-    background: #512a10
+    background: #e4a6f3
 }
 
 @keyframes fadeIn {
@@ -46,15 +46,15 @@ section {
     margin-top: 1rem;
     padding: 1rem 3rem;
     display: inline-block;
-    border: .1rem solid #512a10;
-    color: #512a10;
+    border: .1rem solid #e4a6f3;
+    color: #e4a6f3;
     background: none;
     cursor: pointer;
     font-size: 1.7rem
 }
 
 .link-btn:hover {
-    background: #512a10;
+    background: #e4a6f3;
     color: #fff
 }
 
@@ -73,7 +73,7 @@ section {
 
 .header.active {
     padding: 2rem 0;
-    background: #512a10
+    background: #e4a6f3
 }
 
 .header .logo {
@@ -146,7 +146,7 @@ section {
 
 .login-form form .logo {
     font-size: 2.5rem;
-    color: #512a10;
+    color: #e4a6f3;
     font-weight: bolder
 }
 
@@ -161,7 +161,7 @@ section {
 .login-form form .box {
     width: 100%;
     padding: 1.2rem 1.4rem;
-    border: .1rem solid #512a10;
+    border: .1rem solid #e4a6f3;
     font-size: 1.6rem;
     margin: 1rem 0
 }
@@ -183,7 +183,7 @@ section {
 
 .login-form form .flex a {
     font-size: 1.5rem;
-    color: #512a10;
+    color: #e4a6f3;
     margin-left: auto
 }
 
@@ -206,7 +206,7 @@ section {
 }
 
 .login-form form .account a {
-    color: #512a10
+    color: #e4a6f3
 }
 
 .login-form form .account a:hover {
@@ -238,7 +238,7 @@ section {
 
 .about span {
     font-size: 2.5rem;
-    color: #512a10
+    color: #e4a6f3
 }
 
 .about .title {
@@ -273,7 +273,7 @@ section {
 .about .icons-container .icons i {
     font-size: 4rem;
     margin-bottom: 1.5rem;
-    color: #512a10
+    color: #e4a6f3
 }
 
 .about .icons-container .icons h3 {
@@ -348,7 +348,7 @@ section {
 
 .gallery .box-container .box:hover {
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
-    border: .1rem solid #512a10
+    border: .1rem solid #e4a6f3
 }
 
 .gallery .box-container .box:hover img {
@@ -442,7 +442,7 @@ section {
 
 .reviews .box-container .box .stars i {
     font-size: 1.7rem;
-    color: #512a10
+    color:#e4a6f3
 }
 
 .blogs {
@@ -465,7 +465,7 @@ section {
 }
 
 .blogs .box-container .box:hover .icons {
-    border-top: .1rem solid #512a10
+    border-top: .1rem solid #e4a6f3
 }
 
 .blogs .box-container .box .image {
@@ -516,7 +516,7 @@ section {
 
 .blogs .box-container .box .icons span i {
     padding-right: .5rem;
-    color: #512a10
+    color: #e4a6f3
 }
 
 
@@ -526,7 +526,7 @@ section {
 
 .footer .logo {
     font-size: 3rem;
-    color: #512a10;
+    color: #e4a6f3;
     font-weight: bolder
 }
 
@@ -550,13 +550,13 @@ section {
     width: 5rem;
     line-height: 5rem;
     font-size: 2rem;
-    border: .1rem solid #512a10;
-    color: #512a10;
+    border: .1rem solid #e4a6f3;
+    color: #e4a6f3;
     margin: 0 .3rem
 }
 
 .footer .share a:hover {
-    background: #512a10;
+    background: #e4a6f3;
     color: #fff
 }
 
