@@ -68,12 +68,13 @@ section {
 
 .header {
     z-index: 1000;
-    padding: 4rem 0
+    padding: 4rem 0;
 }
 
 .header.active {
     padding: 2rem 0;
-    background: #e4a6f3
+    background: #aa69ba;
+    opacity: 0.89;
 }
 
 .header .logo {

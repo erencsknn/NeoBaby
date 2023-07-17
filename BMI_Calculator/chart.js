@@ -29,13 +29,14 @@ var line = new Chart(ctx5, {
               from: 1.15,
               to: 0,
               loop: true
-            }},
+            }
+        },
         scales: {
-            yAxes: [{
+            y: {
                 ticks: {
                     beginAtZero: true
                 }
-            }]
+            }
         }
     },
 });

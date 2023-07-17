@@ -5,7 +5,7 @@ var barchart = new Chart(ctx, {
         labels: ['Africa', 'Asia', 'Australia', 'Europa', 'North America', 'South America'],
         datasets: [{
             label: 'Neonatal Mortality Rates',
-            data : [21.252387,13.278613,10.415690,3.440991,3.363487,9.070503],
+            data: [21.252387, 13.278613, 10.415690, 3.440991, 3.363487, 9.070503],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -28,14 +28,11 @@ var barchart = new Chart(ctx, {
     options: {
         layout: {
             padding: 10,
-            
         },
         scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
+            y: {
+                beginAtZero: true
+            }
         }
     }
 });
