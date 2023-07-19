@@ -27,7 +27,7 @@ html::-webkit-scrollbar-track {
 }
 
 html::-webkit-scrollbar-thumb {
-    background: #e4a6f3
+    background:  #aa69ba
 }
 
 @keyframes fadeIn {
@@ -46,15 +46,15 @@ section {
     margin-top: 1rem;
     padding: 1rem 3rem;
     display: inline-block;
-    border: .1rem solid #e4a6f3;
-    color: #e4a6f3;
+    border: .1rem solid  #aa69ba;
+    color:  #aa69ba;
     background: none;
     cursor: pointer;
     font-size: 1.7rem
 }
 
 .link-btn:hover {
-    background: #e4a6f3;
+    background:  #aa69ba;
     color: #fff
 }
 
@@ -147,7 +147,7 @@ section {
 
 .login-form form .logo {
     font-size: 2.5rem;
-    color: #e4a6f3;
+    color:  #aa69ba;
     font-weight: bolder
 }
 
@@ -162,7 +162,7 @@ section {
 .login-form form .box {
     width: 100%;
     padding: 1.2rem 1.4rem;
-    border: .1rem solid #e4a6f3;
+    border: .1rem solid #aa69ba;
     font-size: 1.6rem;
     margin: 1rem 0
 }
@@ -184,7 +184,7 @@ section {
 
 .login-form form .flex a {
     font-size: 1.5rem;
-    color: #e4a6f3;
+    color:  #aa69ba;
     margin-left: auto
 }
 
@@ -207,7 +207,7 @@ section {
 }
 
 .login-form form .account a {
-    color: #e4a6f3
+    color:  #aa69ba
 }
 
 .login-form form .account a:hover {
@@ -239,7 +239,7 @@ section {
 
 .about span {
     font-size: 2.5rem;
-    color: #e4a6f3
+    color:  #aa69ba
 }
 
 .about .title {
@@ -274,7 +274,7 @@ section {
 .about .icons-container .icons i {
     font-size: 4rem;
     margin-bottom: 1.5rem;
-    color: #e4a6f3
+    color:  #aa69ba
 }
 
 .about .icons-container .icons h3 {
@@ -349,7 +349,7 @@ section {
 
 .gallery .box-container .box:hover {
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
-    border: .1rem solid #e4a6f3
+    border: .1rem solid  #aa69ba
 }
 
 .gallery .box-container .box:hover img {
@@ -443,7 +443,7 @@ section {
 
 .reviews .box-container .box .stars i {
     font-size: 1.7rem;
-    color:#e4a6f3
+    color: #aa69ba
 }
 
 .blogs {
@@ -466,7 +466,7 @@ section {
 }
 
 .blogs .box-container .box:hover .icons {
-    border-top: .1rem solid #e4a6f3
+    border-top: .1rem solid  #aa69ba
 }
 
 .blogs .box-container .box .image {
@@ -517,7 +517,7 @@ section {
 
 .blogs .box-container .box .icons span i {
     padding-right: .5rem;
-    color: #e4a6f3
+    color:  #aa69ba
 }
 
 
@@ -527,7 +527,7 @@ section {
 
 .footer .logo {
     font-size: 3rem;
-    color: #e4a6f3;
+    color:  #aa69ba;
     font-weight: bolder
 }
 
@@ -551,13 +551,13 @@ section {
     width: 5rem;
     line-height: 5rem;
     font-size: 2rem;
-    border: .1rem solid #e4a6f3;
-    color: #e4a6f3;
+    border: .1rem solid  #aa69ba;
+    color:  #aa69ba;
     margin: 0 .3rem
 }
 
 .footer .share a:hover {
-    background: #e4a6f3;
+    background:  #aa69ba;
     color: #fff
 }
 
