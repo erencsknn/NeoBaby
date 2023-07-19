@@ -18,6 +18,11 @@ function calculate() {
     return;
   }
 
+if (age > 12) {
+    resultDiv.textContent = 'Please enter a valid age between 1 and 12.month';
+    return;
+  }
+  
   var averageWeight = 0;
   var averageHeight = 0;
   var averageHeadCircumference = 0;
