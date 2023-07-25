@@ -4,6 +4,33 @@ const chatContainer = document.querySelector(".chat-container");
 const themeButton = document.querySelector("#theme-btn");
 const deleteButton = document.querySelector("#delete-btn");
 
+let img_src;
+
+// Function to handle user's profile picture selection
+const selectProfile = (profileImg) => {
+    const userImgElements = document.querySelectorAll(".outgoing .chat-details img");
+    if (userImgElements.length > 0) {
+        userImgElements.forEach(img => {
+            img.src = profileImg.src;
+            img_src = profileImg.src;
+        });
+    }
+    closePopup();
+};
+
+// Function to close the pop-up
+const closePopup = () => {
+    const popup = document.getElementById("popup");
+    popup.style.display = "none";
+};
+
+// Show the pop-up when the page loads
+window.addEventListener("load", () => {
+    const popup = document.getElementById("popup");
+    popup.style.display = "flex";
+});
+
+
 let userText = null;
 const API_KEY = "API KEY";
 const initialHeight = chatInput.scrollHeight;
@@ -124,13 +151,16 @@ const handleOutgoingChat = () => {
     chatInput.value = "";
     chatInput.style.height = `${initialHeight}px`;
 
+
     // Giden sohbet divini oluştur
     const html = `<div class="chat-content">
                     <div class="chat-details">
-                       <img src="images/user.jpg" alt="user-img">
+                        <img src="${img_src}" alt="user-img">
                        <p></p>
                     </div>    
                 </div>`;
+
+
     const outgoingChatDiv = createElement(html, "outgoing");
     
     // Giden sohbet divine kullanıcının metnini ekle
