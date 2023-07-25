@@ -186,6 +186,7 @@ themeButton.addEventListener("click", () => {
     themeButton.innerText = document.body.classList.contains("light-mode") ? "dark_mode" : "light_mode";
 });
 
+/*
 deleteButton.addEventListener("click", () => {
     if(confirm("Are you sure you want to delete all the chats?")) {
         // Tüm sohbetleri silmek istendiğinde, yerel depolamadan temizle ve yeniden yükle
@@ -193,6 +194,33 @@ deleteButton.addEventListener("click", () => {
         loadDataFromLocalstorage();
     }
 });
+*/
+
+const deletePopup = document.getElementById("delete-popup");
+const confirmDeleteButton = document.getElementById("confirm-delete-btn");
+const cancelDeleteButton = document.getElementById("cancel-delete-btn");
+
+deleteButton.addEventListener("click", () => {
+    // Show the custom delete popup instead of the default alert
+    deletePopup.style.display = "flex";
+});
+
+confirmDeleteButton.addEventListener("click", () => {
+    // When the user clicks "Delete" on the popup, delete the chats
+    localStorage.removeItem("all-chats");
+    loadDataFromLocalstorage();
+
+    // Hide the popup
+    deletePopup.style.display = "none";
+});
+
+cancelDeleteButton.addEventListener("click", () => {
+    // When the user clicks "Cancel" on the popup, hide the popup
+    deletePopup.style.display = "none";
+});
+
+
+
 
 chatInput.addEventListener("input", () => {
     // Giriş alanının yüksekliğini ayarla
