@@ -105,6 +105,10 @@ section {
     display: none;
 }
 
+.header #team_logo{
+    width: 6%;
+}
+
 .login-form {
     position: fixed;
     top: 0;
@@ -675,7 +679,7 @@ section {
     background-position-x: 45%
 }
 
-@media(max-width: 991px) {
+@media(max-width: 992px) {
     html {
         font-size: 55%;
         scroll-padding-top: 8rem
@@ -688,7 +692,13 @@ section {
     section {
         padding: 3rem 0
     }
+
+    #team_logo{
+        display: none;
+    }
 }
+
+
 
 @media(max-width: 768px) {
 
