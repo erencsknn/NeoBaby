@@ -3,6 +3,9 @@ const sendButton = document.querySelector("#send-btn");
 const chatContainer = document.querySelector(".chat-container");
 const themeButton = document.querySelector("#theme-btn");
 const deleteButton = document.querySelector("#delete-btn");
+const deletePopup = document.getElementById("delete-popup");
+const confirmDeleteButton = document.getElementById("confirm-delete-btn");
+const cancelDeleteButton = document.getElementById("cancel-delete-btn");
 
 let img_src;
 
@@ -186,19 +189,8 @@ themeButton.addEventListener("click", () => {
     themeButton.innerText = document.body.classList.contains("light-mode") ? "dark_mode" : "light_mode";
 });
 
-/*
-deleteButton.addEventListener("click", () => {
-    if(confirm("Are you sure you want to delete all the chats?")) {
-        // Tüm sohbetleri silmek istendiğinde, yerel depolamadan temizle ve yeniden yükle
-        localStorage.removeItem("all-chats");
-        loadDataFromLocalstorage();
-    }
-});
-*/
 
-const deletePopup = document.getElementById("delete-popup");
-const confirmDeleteButton = document.getElementById("confirm-delete-btn");
-const cancelDeleteButton = document.getElementById("cancel-delete-btn");
+//#region  Delete All Function
 
 deleteButton.addEventListener("click", () => {
     // Show the custom delete popup instead of the default alert
@@ -219,7 +211,7 @@ cancelDeleteButton.addEventListener("click", () => {
     deletePopup.style.display = "none";
 });
 
-
+//#endregion
 
 
 chatInput.addEventListener("input", () => {
