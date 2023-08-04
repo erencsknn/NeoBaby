@@ -7,14 +7,13 @@
     font-family: Poppins;
 }
 
-
 .team-member h3 {
     display: flex;
     justify-content: center;
     font-size: 4rem;
     color: #000000;
     margin-bottom: 0.5em;
-  }
+}
 
 .home-container {
     width: 100%;
@@ -35,7 +34,17 @@
     box-shadow: -5px 8px 45px rgba(51, 51, 51, 0.126);
     transition: all .4s;
     margin: 10px 20px;
-   /* overflow: hidden; /* Ensures that the image won't overflow from the circular frame */
+}
+
+@media screen and (max-width: 768px) {
+    .home-container {
+        flex-wrap: wrap;
+    }
+    .profile-card {
+        width: 150px;
+        height: 150px;
+        margin: 10px;
+    }
 }
 
 .profile-card:hover {
@@ -50,12 +59,12 @@
     object-fit: cover;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
 }
 
 .profile-card:hover img {
     border-radius: 20px;
-    transform: translateY(-50%); /* Adjusted the value for better visual */
+    transform: translateY(-65%); /* Adjusted the value for better visual */
 }
 
 .img img {
