@@ -1,4 +1,4 @@
-                      NEOBABY
+    NEOBABY
 We have developed an outstanding web project focusing on newborn baby health, in line with the United Nations' 17 Sustainable Development Goals, in collaboration with the Innovatech team, and have successfully completed it.
 
 Website's systems:
